@@ -1,24 +1,24 @@
-package com.example.demor_cyclefile;
+package com.example.ex02;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-public class Subactivity extends AppCompatActivity {
-
+public class SubActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_subactivity);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        View btnok = findViewById(R.id.btnok);
+
+        btnok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // Kết thúc activity khi nhấn nút
+            }
         });
     }
 }
