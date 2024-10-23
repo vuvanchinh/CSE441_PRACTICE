@@ -1,6 +1,9 @@
-package com.example.vn.edu.tlu.btth2;
+package com.example.vn.edu.tlu.btth2.Prac1;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +23,18 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        ((Button)findViewById(R.id.button)).setOnClickListener(v -> {
+            Intent intent = new Intent(this, TypeInfoActivity.class);
+            startActivity(intent);
+        });
+
+        Intent intent = getIntent();
+        if (intent != null) {
+            String name = intent.getStringExtra("name");
+            String gpa = intent.getStringExtra("gpa");
+            if (name != null && gpa != null) {
+                ((TextView) findViewById(R.id.textView)).setText("Name: " + name + "\nGPA: " + gpa);
+            }
+        }
     }
 }
