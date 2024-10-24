@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single"
+        android:menuCategory="alternative">
+
+        <item
+            android:id="@+id/cafe"
+            android:title="Cafe" />
+
+        <item
+            android:id="@+id/fruit_juice"
+            android:title="Nước trái cây"/>
+
+        <item
+            android:id="@+id/special_tea"
+            android:title="Trà đặc biệt"/>
+
+        <item
+            android:id="@+id/cake"
+            android:title="Bánh ngọt"/>
+
+        <item
+            android:id="@+id/salty_cake"
+            android:title="Bánh mặn"/>
+
+        <item
+            android:id="@+id/setting"
+            android:title="Cài đặt"/>
+
+        <item
+            android:id="@+id/logout"
+            android:title="Đăng xuất"/>
+    </group>
+
+</menu>
